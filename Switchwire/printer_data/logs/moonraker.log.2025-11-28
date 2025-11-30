@@ -1,0 +1,744 @@
+-------------------- Log Start | Sat Nov 29 05:07:22 2025 --------------------
+platform: Linux-6.12.47+rpt-rpi-v7-armv7l-with-glibc2.41
+data_path: /home/clifgall/printer_data
+is_default_data_path: False
+config_file: /home/clifgall/printer_data/config/moonraker.conf
+backup_config: None
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: f1b4889c0d354a3ba11cec873f9b0568
+unix_socket_path: /home/clifgall/printer_data/comms/moonraker.sock
+structured_logging: False
+software_version: v0.9.3-128-g960e933
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker
+modified_files: []
+unofficial_components: []
+log_file: /home/clifgall/printer_data/logs/moonraker.log
+python_version: 3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]
+launch_args: /home/clifgall/moonraker-env/bin/python /home/clifgall/moonraker/moonraker/moonraker.py -d /home/clifgall/printer_data
+msgspec_enabled: True
+uvloop_enabled: True
+2025-11-28 21:07:22,529 [confighelper.py:read_file()] - Configuration File '/home/clifgall/printer_data/config/moonraker.conf' parsed, total size: 484 B
+2025-11-28 21:07:22,530 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/clifgall/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	192.168.0.0/16
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FC00::/7
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+channel = dev
+refresh_interval = 168
+
+#################################################################
+All Configuration Files:
+/home/clifgall/printer_data/config/moonraker.conf
+#################################################################
+2025-11-28 21:07:22,806 [server.py:load_component()] - Component (secrets) loaded
+2025-11-28 21:07:22,822 [server.py:load_component()] - Component (template) loaded
+2025-11-28 21:07:22,833 [server.py:load_component()] - Component (klippy_connection) loaded
+2025-11-28 21:07:23,879 [application.py:__init__()] - Detected Tornado Version 6.5.1
+2025-11-28 21:07:23,883 [server.py:load_component()] - Component (application) loaded
+2025-11-28 21:07:23,980 [server.py:load_component()] - Component (websockets) loaded
+2025-11-28 21:07:24,195 [server.py:add_log_rollover_item()] - Loading Sqlite database provider. Sqlite Version: 3.46.1
+2025-11-28 21:07:24,245 [server.py:add_log_rollover_item()] - Created default SQL table namespace_store
+2025-11-28 21:07:24,260 [server.py:add_log_rollover_item()] - Unsafe Shutdown Count: 0
+2025-11-28 21:07:24,277 [server.py:load_component()] - Component (database) loaded
+2025-11-28 21:07:24,487 [server.py:load_component()] - Component (dbus_manager) loaded
+2025-11-28 21:07:24,745 [file_manager.py:__init__()] - Using File System Observer: inotify
+2025-11-28 21:07:24,794 [server.py:load_component()] - Component (file_manager) loaded
+2025-11-28 21:07:24,887 [database.py:register_table()] - Creating table authorized_users...
+2025-11-28 21:07:24,934 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+192.168.0.0/16
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fc00::/7
+fe80::/10
+::1/128
+CORS Domains:
+.*\.lan
+.*\.local
+.*://localhost
+.*://localhost:.*
+.*://my\.mainsail\.xyz
+.*://app\.fluidd\.xyz
+2025-11-28 21:07:24,939 [server.py:load_component()] - Component (authorization) loaded
+2025-11-28 21:07:24,961 [server.py:load_component()] - Component (klippy_apis) loaded
+2025-11-28 21:07:25,476 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 13, 5, 'final', 0)
+  version_string: 3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 32bit
+  processor: armv7l
+  cpu_desc: ARMv7 Processor rev 4 (v7l)
+  serial_number: d9ecc45d
+  hardware_desc: BCM2835
+  model: Raspberry Pi 3 Model B Plus Rev 1.3
+  total_memory: 943124
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: ad
+  manufacturer: Unknown
+  oem_id: 4c53
+  product_name: USD00
+  product_revision: 1.0
+  serial_number: 43597c1a
+  manufacturer_date: 11/2021
+  capacity: 58.9 GiB
+  total_bytes: 63281561600
+
+***distribution***
+  name: Raspbian GNU/Linux 13 (trixie)
+  id: raspbian
+  version: 13
+  version_parts: {'major': '13', 'minor': '', 'build_number': ''}
+  like: debian
+  codename: trixie
+  release_info: {}
+  kernel_version: 6.12.47+rpt-rpi-v7
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2025-11-28 21:07:25,510 [server.py:load_component()] - Component (shell_command) loaded
+2025-11-28 21:07:25,510 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2025-11-28 21:07:26,421 [server.py:add_log_rollover_item()] - Found libcamera Python module, version: v0.5.2+99-bfd68f78
+2025-11-28 21:07:26,421 [server.py:load_component()] - Component (machine) loaded
+2025-11-28 21:07:26,439 [server.py:load_component()] - Component (data_store) loaded
+2025-11-28 21:07:26,468 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
+2025-11-28 21:07:26,469 [proc_stats.py:_get_cpu_thermal_file()] - Monitoring temperature for Raspberry Pi CPU
+2025-11-28 21:07:26,470 [server.py:load_component()] - Component (proc_stats) loaded
+2025-11-28 21:07:26,481 [server.py:load_component()] - Component (job_state) loaded
+2025-11-28 21:07:26,509 [server.py:load_component()] - Component (job_queue) loaded
+2025-11-28 21:07:26,562 [database.py:register_table()] - Creating table job_history...
+2025-11-28 21:07:26,599 [database.py:register_table()] - Creating table job_totals...
+2025-11-28 21:07:26,617 [history.py:migrate()] - Migrating history totals from moonraker namespace...
+2025-11-28 21:07:26,646 [server.py:load_component()] - Component (history) loaded
+2025-11-28 21:07:26,691 [server.py:load_component()] - Component (http_client) loaded
+2025-11-28 21:07:26,747 [server.py:load_component()] - Component (announcements) loaded
+2025-11-28 21:07:26,783 [server.py:load_component()] - Component (webcam) loaded
+2025-11-28 21:07:26,804 [server.py:load_component()] - Component (extensions) loaded
+2025-11-28 21:07:27,297 [base_deploy.py:log_info()] - Git Repo moonraker: Detected virtualenv: /home/clifgall/moonraker-env
+2025-11-28 21:07:27,317 [base_deploy.py:log_info()] - Git Repo klipper: Detected virtualenv: /home/clifgall/klippy-env
+2025-11-28 21:07:27,333 [server.py:load_component()] - Component (update_manager) loaded
+2025-11-28 21:07:27,360 [server.py:load_component()] - Component (octoprint_compat) loaded
+2025-11-28 21:07:27,360 [server.py:_initialize_component()] - Performing Component Post Init: [database]
+2025-11-28 21:07:27,379 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2025-11-28 21:07:27,407 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2025-11-28 21:07:27,409 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2025-11-28 21:07:27,411 [machine.py:update_usb_ids()] - Fetching latest usb.ids file...
+2025-11-28 21:07:27,428 [machine.py:validation_init()] - Installation version in database up to date
+2025-11-28 21:07:27,893 [machine.py:check_virt_status()] - No Virtualization Detected
+2025-11-28 21:07:27,976 [machine.py:update_usb_ids()] - Writing usb.ids file...
+2025-11-28 21:07:27,982 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.160
+2025-11-28 21:07:27,984 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.160
+2025-11-28 21:07:28,070 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['network-online.target', 'sysinit.target', '-.mount', 'system.slice']
+**After=['sysinit.target', 'basic.target', '-.mount', 'network-online.target', 'systemd-journald.socket', 'system.slice']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/clifgall/printer_data/systemd/moonraker.env
+**ExecStart=/home/clifgall/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/clifgall/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=clifgall
+2025-11-28 21:07:28,071 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2025-11-28 21:07:28,071 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2025-11-28 21:07:28,084 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2025-11-28 21:07:28,086 [server.py:add_log_rollover_item()] - CPU Throttled Flags: ['Temperature Limit Active', 'Previously Frequency Capped', 'Previously Temperature Limited']
+2025-11-28 21:07:28,108 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2025-11-28 21:07:28,108 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.160
+2025-11-28 21:07:28,112 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2025-11-28 21:07:28,113 [server.py:_initialize_component()] - Performing Component Post Init: [update_manager]
+2025-11-28 21:07:28,831 [base_deploy.py:log_info()] - PackageDeploy: PackageKit Provider Configured
+2025-11-28 21:07:29,351 [confighelper.py:create_backup()] - Backing up last working configuration to '/home/clifgall/printer_data/config/.moonraker.conf.bkp'
+2025-11-28 21:07:29,358 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/clifgall/printer_data/comms/moonraker.sock'
+2025-11-28 21:07:29,359 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Switchwire
+2025-11-28 21:07:29,361 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2025-11-28 21:07:29,624 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-11-28 21:07:29,730 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount']
+**After=['basic.target', '-.mount', 'sysinit.target', 'network-online.target', 'systemd-journald.socket', 'system.slice']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/clifgall/printer_data/systemd/klipper.env
+**ExecStart=/home/clifgall/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/clifgall/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=clifgall
+2025-11-28 21:07:30,002 [server.py:add_log_rollover_item()] - Klipper Version: v0.13.0-411-g938300f3
+2025-11-28 21:07:30,045 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-11-28 21:07:30,047 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-11-28 21:07:30,049 [klippy_connection.py:_check_ready()] - 
+mcu 'mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2025-11-28 21:07:33,318 [base_deploy.py:log_info()] - PackageKit: Detected 0 package updates:
+
+2025-11-28 21:07:33,354 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker status --porcelain -b) successfully finished
+2025-11-28 21:07:33,379 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker branch --list --no-color) successfully finished
+2025-11-28 21:07:33,424 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker remote get-url origin) successfully finished
+2025-11-28 21:07:34,722 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker fetch origin --prune --progress) successfully finished
+2025-11-28 21:07:34,754 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker merge-base --is-ancestor HEAD origin/master) successfully finished
+2025-11-28 21:07:34,779 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker rev-parse HEAD) successfully finished
+2025-11-28 21:07:34,814 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker describe --always --tags --long --dirty --abbrev=8) successfully finished
+2025-11-28 21:07:34,838 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker rev-parse origin/master) successfully finished
+2025-11-28 21:07:34,870 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker describe origin/master --always --tags --long --abbrev=8) successfully finished
+2025-11-28 21:07:34,897 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/moonraker rev-list HEAD..960e933837413b4b365074580aeb14d04437204e --count) successfully finished
+2025-11-28 21:07:34,898 [git_deploy.py:log_repo_info()] - Git Repo moonraker Detected:
+Owner: Arksine
+Repository Name: moonraker
+Path: /home/clifgall/moonraker
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Arksine/moonraker
+Recovery URL: https://github.com/Arksine/moonraker
+Current Commit SHA: 960e933837413b4b365074580aeb14d04437204e
+Upstream Commit SHA: 960e933837413b4b365074580aeb14d04437204e
+Current Version: v0.9.3-128-g960e9338
+Upstream Version: v0.9.3-128-g960e9338
+Rollback Commit: 960e933837413b4b365074580aeb14d04437204e
+Rollback Branch: master
+Rollback Version: v0.9.3-128-g960e9338
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2025-11-28 21:07:34,898 [base_deploy.py:log_info()] - Git Repo moonraker: Channel: dev
+2025-11-28 21:07:34,898 [base_deploy.py:log_info()] - Git Repo moonraker: Validity check for git repo passed
+2025-11-28 21:07:35,111 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper status --porcelain -b) successfully finished
+2025-11-28 21:07:35,135 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper branch --list --no-color) successfully finished
+2025-11-28 21:07:35,181 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper remote get-url origin) successfully finished
+2025-11-28 21:07:35,938 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper fetch origin --prune --progress) successfully finished
+2025-11-28 21:07:35,966 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper merge-base --is-ancestor HEAD origin/master) successfully finished
+2025-11-28 21:07:35,991 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper rev-parse HEAD) successfully finished
+2025-11-28 21:07:36,345 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper describe --always --tags --long --dirty --abbrev=8) successfully finished
+2025-11-28 21:07:36,372 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper rev-parse origin/master) successfully finished
+2025-11-28 21:07:36,627 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper describe origin/master --always --tags --long --abbrev=8) successfully finished
+2025-11-28 21:07:36,655 [shell_command.py:_check_proc_success()] - Command (git -C /home/clifgall/klipper rev-list HEAD..938300f3c3cc25448c499a3a8ca5b47b7a6d4fa8 --count) successfully finished
+2025-11-28 21:07:36,656 [git_deploy.py:log_repo_info()] - Git Repo klipper Detected:
+Owner: Klipper3d
+Repository Name: klipper
+Path: /home/clifgall/klipper
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Klipper3d/klipper
+Recovery URL: https://github.com/Klipper3d/klipper
+Current Commit SHA: 938300f3c3cc25448c499a3a8ca5b47b7a6d4fa8
+Upstream Commit SHA: 938300f3c3cc25448c499a3a8ca5b47b7a6d4fa8
+Current Version: v0.13.0-411-g938300f3
+Upstream Version: v0.13.0-411-g938300f3
+Rollback Commit: 938300f3c3cc25448c499a3a8ca5b47b7a6d4fa8
+Rollback Branch: master
+Rollback Version: v0.13.0-411-g938300f3
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2025-11-28 21:07:36,657 [base_deploy.py:log_info()] - Git Repo klipper: Channel: dev
+2025-11-28 21:07:36,657 [base_deploy.py:log_info()] - Git Repo klipper: Validity check for git repo passed
+2025-11-28 21:07:58,870 [server.py:_handle_term_signal()] - Exiting with signal SIGTERM
+2025-11-28 21:07:58,972 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2025-11-28 21:07:59,040 [server.py:main()] - Server Shutdown
+-------------------- Log Start | Sat Nov 29 05:08:00 2025 --------------------
+platform: Linux-6.12.47+rpt-rpi-v7-armv7l-with-glibc2.41
+data_path: /home/clifgall/printer_data
+is_default_data_path: False
+config_file: /home/clifgall/printer_data/config/moonraker.conf
+backup_config: /home/clifgall/printer_data/config/.moonraker.conf.bkp
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: f1b4889c0d354a3ba11cec873f9b0568
+unix_socket_path: /home/clifgall/printer_data/comms/moonraker.sock
+structured_logging: False
+software_version: v0.9.3-128-g960e933
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker
+modified_files: []
+unofficial_components: []
+log_file: /home/clifgall/printer_data/logs/moonraker.log
+python_version: 3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]
+launch_args: /home/clifgall/moonraker-env/bin/python /home/clifgall/moonraker/moonraker/moonraker.py -d /home/clifgall/printer_data
+msgspec_enabled: True
+uvloop_enabled: True
+2025-11-28 21:08:00,417 [confighelper.py:read_file()] - Configuration File '/home/clifgall/printer_data/config/moonraker.conf' parsed, total size: 630 B
+2025-11-28 21:08:00,418 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/clifgall/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	192.168.0.0/16
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FC00::/7
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+channel = dev
+refresh_interval = 168
+
+[update_manager mainsail]
+path = /home/clifgall/mainsail
+repo = mainsail-crew/mainsail
+channel = stable
+type = web
+persistent_files = 
+	config.json
+
+#################################################################
+All Configuration Files:
+/home/clifgall/printer_data/config/moonraker.conf
+#################################################################
+2025-11-28 21:08:00,595 [server.py:load_component()] - Component (secrets) loaded
+2025-11-28 21:08:00,627 [server.py:load_component()] - Component (template) loaded
+2025-11-28 21:08:00,638 [server.py:load_component()] - Component (klippy_connection) loaded
+2025-11-28 21:08:01,363 [application.py:__init__()] - Detected Tornado Version 6.5.1
+2025-11-28 21:08:01,367 [server.py:load_component()] - Component (application) loaded
+2025-11-28 21:08:01,419 [server.py:load_component()] - Component (websockets) loaded
+2025-11-28 21:08:01,439 [server.py:add_log_rollover_item()] - Loading Sqlite database provider. Sqlite Version: 3.46.1
+2025-11-28 21:08:01,442 [server.py:add_log_rollover_item()] - Unsafe Shutdown Count: 0
+2025-11-28 21:08:01,446 [server.py:load_component()] - Component (database) loaded
+2025-11-28 21:08:01,529 [server.py:load_component()] - Component (dbus_manager) loaded
+2025-11-28 21:08:01,557 [file_manager.py:__init__()] - Using File System Observer: inotify
+2025-11-28 21:08:01,575 [server.py:load_component()] - Component (file_manager) loaded
+2025-11-28 21:08:01,596 [database.py:register_table()] - Found registered table authorized_users
+2025-11-28 21:08:01,599 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+192.168.0.0/16
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fc00::/7
+fe80::/10
+::1/128
+CORS Domains:
+.*\.lan
+.*\.local
+.*://localhost
+.*://localhost:.*
+.*://my\.mainsail\.xyz
+.*://app\.fluidd\.xyz
+2025-11-28 21:08:01,604 [server.py:load_component()] - Component (authorization) loaded
+2025-11-28 21:08:01,610 [server.py:load_component()] - Component (klippy_apis) loaded
+2025-11-28 21:08:01,724 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 13, 5, 'final', 0)
+  version_string: 3.13.5 (main, Jun 25 2025, 18:55:22) [GCC 14.2.0]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 32bit
+  processor: armv7l
+  cpu_desc: ARMv7 Processor rev 4 (v7l)
+  serial_number: d9ecc45d
+  hardware_desc: BCM2835
+  model: Raspberry Pi 3 Model B Plus Rev 1.3
+  total_memory: 943124
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: ad
+  manufacturer: Unknown
+  oem_id: 4c53
+  product_name: USD00
+  product_revision: 1.0
+  serial_number: 43597c1a
+  manufacturer_date: 11/2021
+  capacity: 58.9 GiB
+  total_bytes: 63281561600
+
+***distribution***
+  name: Raspbian GNU/Linux 13 (trixie)
+  id: raspbian
+  version: 13
+  version_parts: {'major': '13', 'minor': '', 'build_number': ''}
+  like: debian
+  codename: trixie
+  release_info: {}
+  kernel_version: 6.12.47+rpt-rpi-v7
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2025-11-28 21:08:01,727 [server.py:load_component()] - Component (shell_command) loaded
+2025-11-28 21:08:01,728 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2025-11-28 21:08:01,958 [server.py:add_log_rollover_item()] - Found libcamera Python module, version: v0.5.2+99-bfd68f78
+2025-11-28 21:08:01,959 [server.py:load_component()] - Component (machine) loaded
+2025-11-28 21:08:01,963 [server.py:load_component()] - Component (data_store) loaded
+2025-11-28 21:08:01,966 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
+2025-11-28 21:08:01,967 [proc_stats.py:_get_cpu_thermal_file()] - Monitoring temperature for Raspberry Pi CPU
+2025-11-28 21:08:01,968 [server.py:load_component()] - Component (proc_stats) loaded
+2025-11-28 21:08:01,969 [server.py:load_component()] - Component (job_state) loaded
+2025-11-28 21:08:01,975 [server.py:load_component()] - Component (job_queue) loaded
+2025-11-28 21:08:01,978 [database.py:register_table()] - Found registered table job_history
+2025-11-28 21:08:01,978 [database.py:register_table()] - Found registered table job_totals
+2025-11-28 21:08:01,981 [server.py:load_component()] - Component (history) loaded
+2025-11-28 21:08:01,992 [server.py:load_component()] - Component (http_client) loaded
+2025-11-28 21:08:02,000 [server.py:load_component()] - Component (announcements) loaded
+2025-11-28 21:08:02,005 [server.py:load_component()] - Component (webcam) loaded
+2025-11-28 21:08:02,012 [server.py:load_component()] - Component (extensions) loaded
+2025-11-28 21:08:02,021 [server.py:load_component()] - Component (octoprint_compat) loaded
+2025-11-28 21:08:02,136 [base_deploy.py:log_info()] - Git Repo moonraker: Detected virtualenv: /home/clifgall/moonraker-env
+2025-11-28 21:08:02,142 [base_deploy.py:log_info()] - Git Repo klipper: Detected virtualenv: /home/clifgall/klippy-env
+2025-11-28 21:08:02,146 [base_deploy.py:log_info()] - Web Client mainsail: Configured persistent files: ['config.json']
+2025-11-28 21:08:02,154 [server.py:load_component()] - Component (update_manager) loaded
+2025-11-28 21:08:02,154 [server.py:_initialize_component()] - Performing Component Post Init: [database]
+2025-11-28 21:08:04,173 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2025-11-28 21:08:04,206 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2025-11-28 21:08:04,209 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2025-11-28 21:08:04,212 [machine.py:validation_init()] - Installation version in database up to date
+2025-11-28 21:08:04,598 [machine.py:check_virt_status()] - No Virtualization Detected
+2025-11-28 21:08:04,636 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.160
+2025-11-28 21:08:04,639 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.160
+2025-11-28 21:08:04,737 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount', 'network-online.target']
+**After=['network-online.target', '-.mount', 'system.slice', 'basic.target', 'sysinit.target', 'systemd-journald.socket']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/clifgall/printer_data/systemd/moonraker.env
+**ExecStart=/home/clifgall/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/clifgall/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=clifgall
+2025-11-28 21:08:04,738 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2025-11-28 21:08:04,740 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2025-11-28 21:08:04,752 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2025-11-28 21:08:04,762 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2025-11-28 21:08:04,762 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.160
+2025-11-28 21:08:04,769 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2025-11-28 21:08:04,770 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount']
+**After=['basic.target', '-.mount', 'sysinit.target', 'network-online.target', 'systemd-journald.socket', 'system.slice']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/clifgall/printer_data/systemd/klipper.env
+**ExecStart=/home/clifgall/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/clifgall/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=clifgall
+2025-11-28 21:08:04,770 [server.py:_initialize_component()] - Performing Component Post Init: [update_manager]
+2025-11-28 21:08:04,774 [server.py:add_log_rollover_item()] - CPU Throttled Flags: ['Temperature Limit Active', 'Previously Frequency Capped', 'Previously Temperature Limited']
+2025-11-28 21:08:04,890 [base_deploy.py:log_info()] - PackageDeploy: PackageKit Provider Configured
+2025-11-28 21:08:04,894 [git_deploy.py:log_repo_info()] - Git Repo moonraker Detected:
+Owner: Arksine
+Repository Name: moonraker
+Path: /home/clifgall/moonraker
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Arksine/moonraker
+Recovery URL: https://github.com/Arksine/moonraker
+Current Commit SHA: 960e933837413b4b365074580aeb14d04437204e
+Upstream Commit SHA: 960e933837413b4b365074580aeb14d04437204e
+Current Version: v0.9.3-128-g960e9338
+Upstream Version: v0.9.3-128-g960e9338
+Rollback Commit: 960e933837413b4b365074580aeb14d04437204e
+Rollback Branch: master
+Rollback Version: v0.9.3-128-g960e9338
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2025-11-28 21:08:04,897 [git_deploy.py:log_repo_info()] - Git Repo klipper Detected:
+Owner: Klipper3d
+Repository Name: klipper
+Path: /home/clifgall/klipper
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Klipper3d/klipper
+Recovery URL: https://github.com/Klipper3d/klipper
+Current Commit SHA: 938300f3c3cc25448c499a3a8ca5b47b7a6d4fa8
+Upstream Commit SHA: 938300f3c3cc25448c499a3a8ca5b47b7a6d4fa8
+Current Version: v0.13.0-411-g938300f3
+Upstream Version: v0.13.0-411-g938300f3
+Rollback Commit: 938300f3c3cc25448c499a3a8ca5b47b7a6d4fa8
+Rollback Branch: master
+Rollback Version: v0.13.0-411-g938300f3
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2025-11-28 21:08:04,905 [base_deploy.py:log_info()] - PackageKit: Next refresh in: 6 Days, 23 Hours, 59 Minutes, 28 Seconds
+2025-11-28 21:08:04,906 [base_deploy.py:log_info()] - Git Repo moonraker: Next refresh in: 6 Days, 23 Hours, 59 Minutes, 30 Seconds
+2025-11-28 21:08:04,906 [base_deploy.py:log_info()] - Git Repo klipper: Next refresh in: 6 Days, 23 Hours, 59 Minutes, 32 Seconds
+2025-11-28 21:08:05,436 [confighelper.py:create_backup()] - Backing up last working configuration to '/home/clifgall/printer_data/config/.moonraker.conf.bkp'
+2025-11-28 21:08:05,444 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/clifgall/printer_data/comms/moonraker.sock'
+2025-11-28 21:08:05,445 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Switchwire
+2025-11-28 21:08:05,447 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2025-11-28 21:08:05,681 [base_deploy.py:log_info()] - Web Client mainsail: Detected
+Repo: mainsail-crew/mainsail
+Channel: stable
+Path: /home/clifgall/mainsail
+Local Version: v2.15.0
+Remote Version: v2.15.0
+Valid: True
+Fallback Detected: False
+Pre-release: False
+Download Url: https://github.com/mainsail-crew/mainsail/releases/download/v2.15.0/mainsail.zip
+Download Size: 2992437
+Content Type: application/zip
+Rollback Version: v2.15.0
+Rollback Repo: mainsail-crew/mainsail
+2025-11-28 21:08:05,950 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-11-28 21:08:06,042 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['system.slice', '-.mount', 'sysinit.target']
+**After=['systemd-journald.socket', 'system.slice', 'basic.target', 'sysinit.target', 'network-online.target', '-.mount']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/clifgall/printer_data/systemd/klipper.env
+**ExecStart=/home/clifgall/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/clifgall/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=clifgall
+2025-11-28 21:08:06,454 [server.py:add_log_rollover_item()] - Klipper Version: v0.13.0-411-g938300f3
+2025-11-28 21:09:36,547 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-11-28 21:09:36,549 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-11-28 21:09:36,553 [klippy_connection.py:_check_ready()] - 
+mcu 'mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2025-11-28 22:13:37,391 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.75
+2025-11-28 22:13:37,396 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 6.44ms
+2025-11-28 22:13:37,397 [websockets.py:open()] - Websocket Opened: ID: 1899542736, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:13:37,405 [websockets.py:_handle_identify()] - Websocket 1899542736 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:13:38,163 [application.py:log_request()] - 404 GET /server/files/config/.theme/default.json?time=1764396817417 (192.168.1.75) [_TRUSTED_USER_] 21.66ms
+2025-11-28 22:13:38,170 [application.py:log_request()] - 404 GET /server/files/config/.theme/maintenance.json?time=1764396817417 (192.168.1.75) [_TRUSTED_USER_] 26.40ms
+2025-11-28 22:14:08,034 [websockets.py:on_close()] - Websocket Closed: ID: 1899542736 Close Code: None, Close Reason: None, Pong Time Elapsed: 20.53
+2025-11-28 22:14:12,664 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 5.00ms
+2025-11-28 22:14:12,664 [websockets.py:open()] - Websocket Opened: ID: 1899932816, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:14:12,672 [websockets.py:on_close()] - Websocket Closed: ID: 1899932816 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 0.01
+2025-11-28 22:14:15,274 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 3.07ms
+2025-11-28 22:14:15,274 [websockets.py:open()] - Websocket Opened: ID: 1899933344, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:14:15,292 [websockets.py:on_close()] - Websocket Closed: ID: 1899933344 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 0.02
+2025-11-28 22:14:46,510 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.10ms
+2025-11-28 22:14:46,511 [websockets.py:open()] - Websocket Opened: ID: 1899932816, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:14:48,168 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 2.08ms
+2025-11-28 22:14:48,169 [websockets.py:open()] - Websocket Opened: ID: 1899933344, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:14:48,179 [websockets.py:_handle_identify()] - Websocket 1899933344 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:15:02,059 [websockets.py:on_close()] - Websocket Closed: ID: 1899932816 Close Code: None, Close Reason: None, Pong Time Elapsed: 5.43
+2025-11-28 22:15:06,032 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.28ms
+2025-11-28 22:15:06,033 [websockets.py:open()] - Websocket Opened: ID: 1899933520, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:15:11,100 [websockets.py:_handle_identify()] - Websocket 1899933520 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:15:19,393 [websockets.py:on_close()] - Websocket Closed: ID: 1899933344 Close Code: None, Close Reason: None, Pong Time Elapsed: 21.13
+2025-11-28 22:15:43,082 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.13ms
+2025-11-28 22:15:43,082 [websockets.py:open()] - Websocket Opened: ID: 1899932816, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:15:43,092 [websockets.py:_handle_identify()] - Websocket 1899932816 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:16:13,031 [websockets.py:on_close()] - Websocket Closed: ID: 1899933520 Close Code: None, Close Reason: None, Pong Time Elapsed: 26.98
+2025-11-28 22:16:28,915 [websockets.py:on_close()] - Websocket Closed: ID: 1899932816 Close Code: None, Close Reason: None, Pong Time Elapsed: 5.82
+2025-11-28 22:17:15,911 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.61ms
+2025-11-28 22:17:15,912 [websockets.py:open()] - Websocket Opened: ID: 1899933520, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:17:15,930 [websockets.py:_handle_identify()] - Websocket 1899933520 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:17:18,619 [web.py:log_exception()] - 403 GET /server/files/config/KAMP?1764397038572 (192.168.1.75): KAMP is not a file
+2025-11-28 22:17:18,630 [application.py:log_request()] - 403 GET /server/files/config/KAMP?1764397038572 (192.168.1.75) [_TRUSTED_USER_] 12.84ms
+2025-11-28 22:17:19,711 [websockets.py:on_close()] - Websocket Closed: ID: 1899933520 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 3.80
+2025-11-28 22:17:19,867 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 3.08ms
+2025-11-28 22:17:19,868 [websockets.py:open()] - Websocket Opened: ID: 1899933168, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:17:19,880 [websockets.py:_handle_identify()] - Websocket 1899933168 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:18:18,788 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary4qtPCLnvy7fogn3L
+2025-11-28 22:18:18,813 [application.py:post()] - Processing Uploaded File: moonraker.conf
+2025-11-28 22:18:18,831 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 45.11ms
+2025-11-28 22:18:44,174 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryQYMaDGwTSrXUwXYB
+2025-11-28 22:18:44,200 [application.py:post()] - Processing Uploaded File: moonraker.conf
+2025-11-28 22:18:44,220 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 47.99ms
+2025-11-28 22:19:14,946 [websockets.py:on_close()] - Websocket Closed: ID: 1899933168 Close Code: None, Close Reason: None, Pong Time Elapsed: 15.05
+2025-11-28 22:19:28,620 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.63ms
+2025-11-28 22:19:28,620 [websockets.py:open()] - Websocket Opened: ID: 1899933344, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:19:28,630 [websockets.py:_handle_identify()] - Websocket 1899933344 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:20:11,255 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarymPMcToaVAHCUAyBD
+2025-11-28 22:20:11,281 [application.py:post()] - Processing Uploaded File: printer.cfg
+2025-11-28 22:20:11,300 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 47.09ms
+2025-11-28 22:20:22,896 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2025-11-28 22:20:23,149 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-11-28 22:20:25,832 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-11-28 22:20:25,833 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-11-28 22:20:26,082 [job_state.py:_handle_started()] - Job state initialized: standby
+2025-11-28 22:20:26,341 [klippy_connection.py:_check_ready()] - Klippy ready
+2025-11-28 22:20:26,846 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
+2025-11-28 22:20:44,224 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryRI8HFCgqUBIcBDbk
+2025-11-28 22:20:44,253 [application.py:post()] - Processing Uploaded File: printer.cfg
+2025-11-28 22:20:44,274 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 51.35ms
+2025-11-28 22:21:06,362 [websockets.py:on_close()] - Websocket Closed: ID: 1899933344 Close Code: None, Close Reason: None, Pong Time Elapsed: 27.72
+2025-11-28 22:22:33,246 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 3.90ms
+2025-11-28 22:22:33,247 [websockets.py:open()] - Websocket Opened: ID: 1899932816, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:22:33,258 [websockets.py:_handle_identify()] - Websocket 1899932816 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:22:48,889 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary5G9y28XH30TyD2jc
+2025-11-28 22:22:48,906 [application.py:post()] - Processing Uploaded File: klipper_expander.cfg
+2025-11-28 22:22:48,923 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 35.66ms
+2025-11-28 22:22:56,020 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAdaAeAyZABxqcTeU
+2025-11-28 22:22:56,044 [application.py:post()] - Processing Uploaded File: klipper_expander.cfg
+2025-11-28 22:22:56,063 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 44.53ms
+2025-11-28 22:23:34,057 [websockets.py:on_close()] - Websocket Closed: ID: 1899932816 Close Code: None, Close Reason: None, Pong Time Elapsed: 20.78
+2025-11-28 22:24:45,137 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.36ms
+2025-11-28 22:24:45,138 [websockets.py:open()] - Websocket Opened: ID: 1899932816, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:24:45,150 [websockets.py:_handle_identify()] - Websocket 1899932816 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:24:59,852 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryjs4zUrkKCr7Wf8QY
+2025-11-28 22:24:59,872 [application.py:post()] - Processing Uploaded File: klipper-mini12864.cfg
+2025-11-28 22:24:59,889 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 39.05ms
+2025-11-28 22:25:29,253 [application.py:prepare()] - Upload Request Received from 192.168.1.75
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryYAcmN0DefbBdX47q
+2025-11-28 22:25:29,278 [application.py:post()] - Processing Uploaded File: klipper-mini12864.cfg
+2025-11-28 22:25:29,297 [application.py:log_request()] - 201 POST /server/files/upload (192.168.1.75) [_TRUSTED_USER_] 46.40ms
+2025-11-28 22:25:53,559 [websockets.py:on_close()] - Websocket Closed: ID: 1899932816 Close Code: None, Close Reason: None, Pong Time Elapsed: 28.39
+2025-11-28 22:27:31,842 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.52ms
+2025-11-28 22:27:31,843 [websockets.py:open()] - Websocket Opened: ID: 1899933344, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:27:31,855 [websockets.py:_handle_identify()] - Websocket 1899933344 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:29:01,725 [websockets.py:on_close()] - Websocket Closed: ID: 1899933344 Close Code: None, Close Reason: None, Pong Time Elapsed: 19.84
+2025-11-28 22:29:32,574 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 4.81ms
+2025-11-28 22:29:32,575 [websockets.py:open()] - Websocket Opened: ID: 1899933344, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 22:29:32,587 [websockets.py:_handle_identify()] - Websocket 1899933344 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 22:30:24,051 [websockets.py:on_close()] - Websocket Closed: ID: 1899933344 Close Code: None, Close Reason: None, Pong Time Elapsed: 11.46
+2025-11-28 23:33:04,225 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.75
+2025-11-28 23:38:04,247 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.75
+2025-11-28 23:38:04,249 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 3.69ms
+2025-11-28 23:38:04,250 [websockets.py:open()] - Websocket Opened: ID: 1898922560, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 23:38:04,268 [websockets.py:_handle_identify()] - Websocket 1898922560 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
+2025-11-28 23:39:05,549 [websockets.py:on_close()] - Websocket Closed: ID: 1898922560 Close Code: None, Close Reason: None, Pong Time Elapsed: 21.23
+2025-11-28 23:59:24,244 [application.py:log_request()] - 101 GET /websocket (192.168.1.75) [_TRUSTED_USER_] 5.09ms
+2025-11-28 23:59:24,245 [websockets.py:open()] - Websocket Opened: ID: 1898922736, Proxied: True, User Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1, Host Name: 192.168.1.160
+2025-11-28 23:59:24,259 [websockets.py:_handle_identify()] - Websocket 1898922736 Client Identified - Name: mainsail, Version: 2.15.0, Type: web
